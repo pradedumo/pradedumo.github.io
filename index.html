@@ -6173,6 +6173,890 @@ img,svg,video{max-width:100%}
 }
 </style>
 
+
+<style id="v48-hero-responsive-rebuild">
+/* =========================
+   V48 — TRUE RESPONSIVE HERO
+   Desktop remains unchanged. Tablet and mobile recompose the hero.
+   ========================= */
+
+/* The desktop hero's minimum column widths become unsafe before ~1100px.
+   Switch to a dedicated tablet composition before that happens. */
+@media(max-width:1100px) and (min-width:701px){
+  .hero.hero-v12{
+    min-height:auto !important;
+    padding:92px 0 42px !important;
+    overflow:hidden !important;
+  }
+
+  .hero-v12-wrap{
+    width:min(100% - 36px,980px) !important;
+    min-height:0 !important;
+    grid-template-columns:minmax(250px,.72fr) minmax(0,1.28fr) !important;
+    grid-template-rows:auto auto !important;
+    column-gap:24px !important;
+    row-gap:22px !important;
+    align-items:end !important;
+  }
+
+  .hero-v12-copy{
+    grid-column:1 / -1 !important;
+    grid-row:1 !important;
+    width:100% !important;
+    max-width:900px !important;
+    padding:24px 0 4px !important;
+    align-self:start !important;
+  }
+
+  .hero.hero-v12 h1.hero-v12-title{
+    max-width:800px !important;
+    font-size:clamp(3.45rem,7.4vw,5rem) !important;
+    line-height:.92 !important;
+  }
+
+  .hero-v12-intro{
+    max-width:690px !important;
+    font-size:1rem !important;
+  }
+
+  .hero-v12-actions{
+    max-width:478px !important;
+  }
+
+  .hero-v12-identity{
+    margin-top:24px !important;
+  }
+
+  .hero-v12-stats{
+    max-width:520px !important;
+    margin-top:22px !important;
+  }
+
+  /* Portrait sits beside the KPI stack on tablets. */
+  .hero-v12-person{
+    grid-column:1 !important;
+    grid-row:2 !important;
+    width:100% !important;
+    height:520px !important;
+    min-height:0 !important;
+    margin:0 !important;
+    padding:0 !important;
+    align-self:end !important;
+    overflow:visible !important;
+  }
+
+  .hero-v12-person-glow{
+    width:min(390px,42vw) !important;
+    height:min(390px,42vw) !important;
+    bottom:18px !important;
+  }
+
+  .hero-v12-person-img{
+    width:auto !important;
+    height:500px !important;
+    max-width:118% !important;
+    max-height:none !important;
+    transform:translate(0,42px) scale(1.06) !important;
+    transform-origin:50% 100% !important;
+  }
+
+  .hero-v12-kpis{
+    grid-column:2 !important;
+    grid-row:2 !important;
+    display:flex !important;
+    flex-direction:column !important;
+    gap:10px !important;
+    width:100% !important;
+    margin:0 !important;
+    padding:0 0 4px !important;
+    align-self:center !important;
+  }
+
+  .hero-v12-kpi{
+    width:100% !important;
+    padding:14px 15px !important;
+    border-radius:16px !important;
+  }
+
+  .hero-v12-kpi-top.simple{
+    grid-template-columns:44px minmax(0,1fr) !important;
+    gap:10px !important;
+    margin-bottom:7px !important;
+  }
+
+  .hero-v12-icon{
+    width:44px !important;
+    height:44px !important;
+    border-radius:12px !important;
+  }
+
+  .hero-v12-kpi-title h3{
+    font-size:.90rem !important;
+  }
+
+  .hero-v12-kpi-title p{
+    font-size:.64rem !important;
+  }
+
+  .qa-capability-body,
+  .sales-capability-body{
+    gap:8px !important;
+    margin-top:8px !important;
+  }
+
+  .hero-v12-ai-body{
+    margin-top:8px !important;
+    grid-template-columns:1.28fr .72fr !important;
+    gap:10px !important;
+  }
+
+  .hero-v12-ai-preview{
+    height:105px !important;
+  }
+
+  .hero-v12-checks{
+    gap:7px !important;
+  }
+
+  .hero-v12-checks li{
+    font-size:.64rem !important;
+    padding-left:23px !important;
+  }
+
+  .hero-v12-checks li::before{
+    width:18px !important;
+    height:18px !important;
+  }
+
+  .hero-v12-corner-note{
+    display:none !important;
+  }
+}
+
+
+/* Phones: a clean single-column hero with proportional portrait and cards. */
+@media(max-width:700px){
+  .hero.hero-v12{
+    min-height:auto !important;
+    padding:82px 0 34px !important;
+    overflow:hidden !important;
+  }
+
+  .hero-v12-wrap{
+    width:calc(100% - 24px) !important;
+    min-height:0 !important;
+    display:grid !important;
+    grid-template-columns:minmax(0,1fr) !important;
+    grid-template-rows:auto !important;
+    gap:0 !important;
+    align-items:start !important;
+  }
+
+  .hero-v12-copy{
+    grid-column:1 !important;
+    grid-row:auto !important;
+    width:100% !important;
+    min-width:0 !important;
+    padding:24px 0 0 !important;
+  }
+
+  .hero-v12-copy .eyebrow{
+    margin-bottom:13px !important;
+    font-size:.60rem !important;
+    letter-spacing:.16em !important;
+  }
+
+  .hero.hero-v12 h1.hero-v12-title{
+    width:100% !important;
+    max-width:100% !important;
+    font-size:clamp(2.7rem,12.6vw,3.75rem) !important;
+    line-height:.93 !important;
+    letter-spacing:-.058em !important;
+    overflow-wrap:normal !important;
+    word-break:normal !important;
+  }
+
+  /* Put the rotating word on its own full line on phones.
+     This removes the fixed 5.9em inline width that can push the title outside. */
+  .hero-v12-title .word-window{
+    display:block !important;
+    width:max-content !important;
+    max-width:100% !important;
+    min-width:0 !important;
+    height:1.02em !important;
+    margin-top:.03em !important;
+    white-space:nowrap !important;
+  }
+
+  .hero-v12-title .word-track{
+    width:max-content !important;
+  }
+
+  .hero-v12-intro{
+    width:100% !important;
+    max-width:100% !important;
+    margin-top:16px !important;
+    font-size:.92rem !important;
+    line-height:1.50 !important;
+  }
+
+  /* Keep the three requested CTAs on one line, but make them mobile-sized. */
+  .hero-v12-actions{
+    position:relative !important;
+    display:grid !important;
+    grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+    gap:6px !important;
+    width:100% !important;
+    max-width:none !important;
+    margin-top:19px !important;
+  }
+
+  .hero-v12-actions > .btn,
+  .hero-v12-actions > .resume-download,
+  .hero-v12-actions .resume-summary{
+    width:100% !important;
+    min-width:0 !important;
+  }
+
+  .hero-v12-actions .btn,
+  .hero-v12-actions .resume-summary{
+    min-height:44px !important;
+    height:44px !important;
+    padding:0 7px !important;
+    gap:4px !important;
+    border-radius:9px !important;
+    font-size:clamp(.56rem,2.45vw,.66rem) !important;
+    white-space:nowrap !important;
+  }
+
+  .hero-v12-actions .btn-primary,
+  .hero-v12-actions .resume-summary,
+  .hero-v12-actions .hero-v12-outline{
+    min-width:0 !important;
+  }
+
+  .hero-v12-actions .resume-download-hero{
+    position:static !important;
+  }
+
+  .hero-v12-actions .resume-download-icon,
+  .hero-v12-actions .resume-chevron{
+    display:none !important;
+  }
+
+  .hero-v12-actions .resume-menu-panel{
+    position:absolute !important;
+    z-index:30 !important;
+    left:0 !important;
+    right:0 !important;
+    top:calc(100% + 8px) !important;
+    width:100% !important;
+    min-width:0 !important;
+    max-width:none !important;
+  }
+
+  .hero-v12-identity{
+    margin-top:22px !important;
+  }
+
+  .hero-v12-identity h2{
+    font-size:1.65rem !important;
+    line-height:1.04 !important;
+  }
+
+  .hero-v12-identity p{
+    max-width:100% !important;
+    margin-top:7px !important;
+    font-size:.72rem !important;
+    line-height:1.5 !important;
+  }
+
+  .hero-v12-signature{
+    margin-top:12px !important;
+  }
+
+  .hero-v12-signature em{
+    font-size:1.15rem !important;
+  }
+
+  .hero-v12-stats{
+    width:100% !important;
+    display:grid !important;
+    grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+    align-items:start !important;
+    margin-top:20px !important;
+  }
+
+  .hero-v12-stats > div{
+    min-width:0 !important;
+    width:auto !important;
+    margin:0 !important;
+    padding:0 7px !important;
+    text-align:center !important;
+  }
+
+  .hero-v12-stats > div:first-child{
+    padding-left:0 !important;
+  }
+
+  .hero-v12-stats > div:last-child{
+    padding-right:0 !important;
+  }
+
+  .hero-v12-stats small{
+    font-size:.46rem !important;
+    letter-spacing:.08em !important;
+  }
+
+  .hero-v12-stats strong{
+    margin-top:4px !important;
+    font-size:1rem !important;
+  }
+
+  /* Portrait scales from the actual viewport instead of keeping a fixed 410px image. */
+  .hero-v12-person{
+    grid-column:1 !important;
+    grid-row:auto !important;
+    width:100% !important;
+    height:clamp(305px,88vw,390px) !important;
+    min-height:0 !important;
+    margin:12px 0 0 !important;
+    padding:0 !important;
+    overflow:visible !important;
+    align-items:flex-end !important;
+  }
+
+  .hero-v12-person-glow{
+    width:min(88vw,360px) !important;
+    height:min(88vw,360px) !important;
+    bottom:8px !important;
+  }
+
+  .hero-v12-person-img{
+    width:auto !important;
+    height:clamp(315px,91vw,405px) !important;
+    max-width:112% !important;
+    max-height:none !important;
+    transform:translate(0,28px) scale(1.04) !important;
+    transform-origin:50% 100% !important;
+  }
+
+  .hero-v12-kpis{
+    grid-column:1 !important;
+    grid-row:auto !important;
+    width:100% !important;
+    display:grid !important;
+    grid-template-columns:minmax(0,1fr) !important;
+    gap:9px !important;
+    margin:10px 0 0 !important;
+    padding:0 !important;
+  }
+
+  .hero-v12-kpi{
+    width:100% !important;
+    height:auto !important;
+    padding:13px 14px !important;
+    border-radius:15px !important;
+    animation:none !important;
+    transform:none !important;
+  }
+
+  .hero-v12-kpi-top.simple{
+    grid-template-columns:42px minmax(0,1fr) !important;
+    gap:10px !important;
+    margin-bottom:7px !important;
+  }
+
+  .hero-v12-icon{
+    width:42px !important;
+    height:42px !important;
+    border-radius:11px !important;
+    font-size:1.05rem !important;
+  }
+
+  .hero-v12-kpi-title h3{
+    font-size:.88rem !important;
+  }
+
+  .hero-v12-kpi-title p{
+    margin-top:2px !important;
+    font-size:.62rem !important;
+    line-height:1.35 !important;
+  }
+
+  .qa-capability-body,
+  .sales-capability-body{
+    gap:8px !important;
+    margin-top:8px !important;
+  }
+
+  .qa-capability-flow,
+  .sales-capability-flow{
+    gap:5px !important;
+  }
+
+  .qa-capability-flow > div,
+  .sales-capability-flow > div{
+    padding:7px 5px !important;
+  }
+
+  .qa-capability-focus span,
+  .sales-capability-focus span{
+    padding:4px 6px !important;
+    font-size:.43rem !important;
+  }
+
+  .hero-v12-ai-body{
+    grid-template-columns:minmax(0,1.25fr) minmax(92px,.75fr) !important;
+    gap:9px !important;
+    margin-top:8px !important;
+  }
+
+  .hero-v12-ai-preview{
+    height:104px !important;
+  }
+
+  .hero-v12-monitor{
+    right:12px !important;
+    width:88px !important;
+  }
+
+  .hero-v12-checks{
+    gap:6px !important;
+  }
+
+  .hero-v12-checks li{
+    padding-left:22px !important;
+    font-size:.61rem !important;
+  }
+
+  .hero-v12-checks li::before{
+    width:17px !important;
+    height:17px !important;
+  }
+
+  .hero-v12-bg.hero-v12-dots,
+  .hero-v12-plant{
+    opacity:.14 !important;
+  }
+}
+
+
+/* Extra-small phones: still keep the CTA row intact without clipping. */
+@media(max-width:360px){
+  .hero-v12-wrap{
+    width:calc(100% - 18px) !important;
+  }
+
+  .hero.hero-v12 h1.hero-v12-title{
+    font-size:clamp(2.52rem,12.4vw,3.15rem) !important;
+  }
+
+  .hero-v12-actions{
+    gap:4px !important;
+  }
+
+  .hero-v12-actions .btn,
+  .hero-v12-actions .resume-summary{
+    padding:0 4px !important;
+    font-size:.54rem !important;
+  }
+
+  .hero-v12-person{
+    height:292px !important;
+  }
+
+  .hero-v12-person-img{
+    height:310px !important;
+  }
+
+  .hero-v12-stats strong{
+    font-size:.92rem !important;
+  }
+
+  .hero-v12-kpi{
+    padding:12px !important;
+  }
+}
+</style>
+
+
+<style id="v49-mobile-clipping-and-flow-fixes">
+/* =========================
+   V49 — MOBILE CLIPPING + FLOW FIXES
+   ========================= */
+
+@media(max-width:700px){
+
+  /* ============================================================
+     1. HERO KPI CARDS — NO INNER CONTENT CLIPPING
+     ============================================================ */
+  .hero-v12-kpis{
+    overflow:visible !important;
+    align-items:stretch !important;
+  }
+
+  .hero-v12-kpi{
+    height:auto !important;
+    min-height:0 !important;
+    overflow:hidden !important;
+  }
+
+  .hero-v12-kpi-top,
+  .hero-v12-kpi-top.simple,
+  .hero-v12-kpi-title{
+    min-width:0 !important;
+  }
+
+  .hero-v12-kpi-title h3,
+  .hero-v12-kpi-title p{
+    max-width:100% !important;
+    white-space:normal !important;
+  }
+
+  /* AI KPI was still trying to preserve the desktop preview/checklist columns.
+     Stack the preview first, then show the four capabilities in a 2×2 grid. */
+  .hero-v12-ai-body{
+    display:grid !important;
+    grid-template-columns:minmax(0,1fr) !important;
+    gap:10px !important;
+    width:100% !important;
+    margin-top:8px !important;
+  }
+
+  .hero-v12-ai-preview{
+    width:100% !important;
+    height:112px !important;
+  }
+
+  .hero-v12-checks{
+    width:100% !important;
+    display:grid !important;
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    gap:7px 10px !important;
+  }
+
+  .hero-v12-checks li{
+    min-width:0 !important;
+    width:auto !important;
+    padding-left:22px !important;
+    font-size:.64rem !important;
+    line-height:1.25 !important;
+    white-space:normal !important;
+  }
+
+  .hero-v12-monitor{
+    right:18px !important;
+  }
+
+  /* Keep QA / Sales flow cells inside their card at very narrow widths. */
+  .qa-capability-flow,
+  .sales-capability-flow{
+    width:100% !important;
+  }
+
+  .qa-capability-flow > div,
+  .sales-capability-flow > div{
+    min-width:0 !important;
+  }
+
+  .qa-capability-flow > div strong,
+  .sales-capability-flow > div strong{
+    white-space:normal !important;
+    overflow-wrap:normal !important;
+    word-break:normal !important;
+  }
+
+
+  /* ============================================================
+     2. SELECTED WORK — AI VIDEOS
+     Show all three vertically. No hidden horizontal carousel.
+     ============================================================ */
+  .ai-real-work-scene{
+    overflow:visible !important;
+  }
+
+  .ai-real-shell{
+    width:100% !important;
+    height:auto !important;
+    min-height:0 !important;
+    overflow:visible !important;
+    padding:13px !important;
+  }
+
+  .ai-reel-grid{
+    display:grid !important;
+    grid-template-columns:minmax(0,1fr) !important;
+    gap:12px !important;
+    width:100% !important;
+    overflow:visible !important;
+    scroll-snap-type:none !important;
+    padding:0 !important;
+  }
+
+  .ai-reel-card{
+    display:block !important;
+    width:100% !important;
+    max-width:none !important;
+    min-width:0 !important;
+    flex:none !important;
+    scroll-snap-align:none !important;
+  }
+
+  .ai-reel-thumb{
+    width:100% !important;
+    aspect-ratio:4 / 5 !important;
+  }
+
+  .ai-reel-info{
+    padding:10px 11px 8px !important;
+  }
+
+  .ai-reel-info strong{
+    font-size:.76rem !important;
+  }
+
+  .ai-reel-info span{
+    font-size:.54rem !important;
+  }
+
+  .ai-reel-metrics{
+    min-width:0 !important;
+  }
+
+  .ai-reel-metrics > div{
+    min-width:0 !important;
+    padding:8px 3px !important;
+  }
+
+  .ai-reel-metrics b{
+    font-size:.72rem !important;
+  }
+
+  .ai-reel-metrics small{
+    font-size:.46rem !important;
+  }
+
+  .ai-gpt-workflow{
+    margin-top:14px !important;
+  }
+
+
+  /* ============================================================
+     3. SELECTED WORK — SALES RESEARCH
+     Remove fixed-size/absolute desktop dashboard on mobile.
+     ============================================================ */
+  .sales-scene,
+  .sales-research-scene{
+    overflow:visible !important;
+  }
+
+  .sales-scene::before,
+  .sales-network{
+    display:none !important;
+  }
+
+  .pipeline-dashboard.research-dashboard,
+  .research-dashboard{
+    position:relative !important;
+    left:auto !important;
+    top:auto !important;
+    transform:none !important;
+    width:100% !important;
+    max-width:100% !important;
+    height:auto !important;
+    min-height:0 !important;
+    margin:0 !important;
+    display:block !important;
+    overflow:visible !important;
+    border-radius:18px !important;
+  }
+
+  .pipeline-sidebar{
+    display:none !important;
+  }
+
+  .pipeline-main,
+  .research-main{
+    width:100% !important;
+    min-width:0 !important;
+    padding:13px !important;
+  }
+
+  .pipeline-topbar{
+    width:100% !important;
+    display:flex !important;
+    flex-wrap:wrap !important;
+    gap:8px !important;
+    align-items:flex-start !important;
+  }
+
+  .pipeline-topbar > div{
+    min-width:0 !important;
+    flex:1 1 150px !important;
+  }
+
+  .pipeline-topbar button{
+    flex:0 0 auto !important;
+  }
+
+  .research-flow-card{
+    width:100% !important;
+    height:auto !important;
+    min-height:0 !important;
+    margin-top:11px !important;
+    overflow:visible !important;
+  }
+
+  .research-flow-head{
+    width:100% !important;
+    gap:8px !important;
+  }
+
+  .research-process{
+    width:100% !important;
+    display:grid !important;
+    grid-template-columns:minmax(0,1fr) !important;
+    gap:8px !important;
+  }
+
+  .research-step{
+    width:100% !important;
+    min-width:0 !important;
+  }
+
+  .research-capability-row{
+    width:100% !important;
+    display:grid !important;
+    grid-template-columns:minmax(0,1fr) !important;
+    gap:7px !important;
+    margin-top:9px !important;
+  }
+
+  .research-capability-row .glass-mini{
+    width:100% !important;
+    min-width:0 !important;
+  }
+
+
+  /* ============================================================
+     4. EXPERIENCE — TOP-DOWN READING ORDER
+     Heading -> paragraph -> résumé -> timeline
+     ============================================================ */
+  .experience .section-head,
+  .experience .experience-head{
+    display:block !important;
+    width:100% !important;
+    margin-bottom:34px !important;
+  }
+
+  .experience .section-head > div:first-child{
+    width:100% !important;
+  }
+
+  .experience .section-head h2{
+    width:100% !important;
+    max-width:100% !important;
+    margin-top:8px !important;
+    font-size:clamp(3rem,13vw,4.25rem) !important;
+    line-height:.93 !important;
+  }
+
+  .experience-intro{
+    width:100% !important;
+    max-width:100% !important;
+    margin-top:22px !important;
+  }
+
+  .experience-intro > p{
+    width:100% !important;
+    max-width:620px !important;
+    font-size:.92rem !important;
+    line-height:1.58 !important;
+  }
+
+  .experience-resume-links{
+    width:100% !important;
+    margin-top:16px !important;
+    align-items:center !important;
+  }
+
+  .timeline-wrap{
+    width:100% !important;
+    margin-top:0 !important;
+  }
+}
+
+
+/* Make the same fixes robust even at the 280px width shown in testing. */
+@media(max-width:360px){
+  .hero-v12-ai-preview{
+    height:100px !important;
+  }
+
+  .hero-v12-checks{
+    gap:6px !important;
+  }
+
+  .hero-v12-checks li{
+    padding-left:20px !important;
+    font-size:.58rem !important;
+  }
+
+  .ai-real-shell,
+  .pipeline-main,
+  .research-main{
+    padding:10px !important;
+  }
+
+  .ai-reel-thumb{
+    aspect-ratio:1 / 1 !important;
+  }
+
+  .pipeline-topbar{
+    display:block !important;
+  }
+
+  .pipeline-topbar button{
+    margin-top:8px !important;
+    max-width:100% !important;
+  }
+
+  .research-flow-card{
+    padding:11px !important;
+  }
+
+  .research-step{
+    padding:10px !important;
+  }
+
+  .experience .section-head h2{
+    font-size:clamp(2.75rem,13vw,3.55rem) !important;
+  }
+
+  .experience-intro{
+    margin-top:18px !important;
+  }
+
+  .experience-resume-links{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    gap:7px !important;
+    align-items:stretch !important;
+  }
+
+  .experience-resume-links > span{
+    margin:0 0 1px !important;
+  }
+
+  .experience-resume-links a{
+    width:100% !important;
+    display:flex !important;
+    justify-content:space-between !important;
+  }
+}
+</style>
+
 </head>
 <body>
 
