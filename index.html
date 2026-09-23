@@ -649,6 +649,10 @@
                   <a
                     class="ai-reel-card"
                     href="https://www.facebook.com/share/r/14otoR1QVT9/"
+                    data-portfolio-video="true"
+                    data-video-title="Mini Electric Chopper"
+                    data-video-link="https://www.facebook.com/share/r/14otoR1QVT9/"
+                    data-video-embed="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fshare%2Fr%2F14otoR1QVT9%2F&show_text=false&width=500&height=800"
                     rel="noopener noreferrer"
                     target="_blank"
                   >
@@ -673,6 +677,10 @@
                   <a
                     class="ai-reel-card"
                     href="https://www.facebook.com/share/r/1CTYrnPrcn/"
+                    data-portfolio-video="true"
+                    data-video-title="Mini Bag Sealer"
+                    data-video-link="https://www.facebook.com/share/r/1CTYrnPrcn/"
+                    data-video-embed="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fshare%2Fr%2F1CTYrnPrcn%2F&show_text=false&width=500&height=800"
                     rel="noopener noreferrer"
                     target="_blank"
                   >
@@ -697,6 +705,10 @@
                   <a
                     class="ai-reel-card"
                     href="https://www.facebook.com/share/r/1DeRVBjuEn/"
+                    data-portfolio-video="true"
+                    data-video-title="Rechargeable Mini Vacuum"
+                    data-video-link="https://www.facebook.com/share/r/1DeRVBjuEn/"
+                    data-video-embed="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fshare%2Fr%2F1DeRVBjuEn%2F&show_text=false&width=500&height=800"
                     rel="noopener noreferrer"
                     target="_blank"
                   >
@@ -721,7 +733,7 @@
                 </div>
                 <div class="ai-gpt-workflow">
                   <div class="ai-workflow-label">
-                    <small>Custom GPT workflow</small>
+                    <small>AI content workflow</small>
                     <strong>Research → Create → Publish</strong>
                   </div>
                   <a
@@ -1003,6 +1015,10 @@
             aria-label="Watch Rechargeable Mini Vacuum reel on Facebook"
             class="featured-reel-media"
             href="https://www.facebook.com/share/r/1DeRVBjuEn/"
+            data-portfolio-video="true"
+            data-video-title="Rechargeable Mini Vacuum"
+            data-video-link="https://www.facebook.com/share/r/1DeRVBjuEn/"
+            data-video-embed="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fshare%2Fr%2F1DeRVBjuEn%2F&show_text=false&width=640&height=920"
             rel="noopener noreferrer"
             target="_blank"
           >
@@ -1299,8 +1315,65 @@
         </div>
       </div>
     </footer>
+    <div
+      aria-hidden="true"
+      class="portfolio-video-modal"
+      hidden
+      id="portfolioVideoModal"
+    >
+      <div class="portfolio-video-backdrop" data-close-video="true"></div>
+
+      <div
+        aria-labelledby="portfolioVideoTitle"
+        aria-modal="true"
+        class="portfolio-video-dialog"
+        role="dialog"
+      >
+        <button
+          aria-label="Close video"
+          class="portfolio-video-close"
+          id="portfolioVideoClose"
+          type="button"
+        >
+          ✕
+        </button>
+
+        <div class="portfolio-video-head">
+          <div>
+            <small>AI video / playable preview</small>
+            <h3 id="portfolioVideoTitle">Featured video</h3>
+          </div>
+
+          <a
+            class="portfolio-video-original"
+            href="#"
+            id="portfolioVideoOriginal"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            View original ↗
+          </a>
+        </div>
+
+        <div class="portfolio-video-frame-wrap">
+          <iframe
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+            allowfullscreen
+            id="portfolioVideoFrame"
+            loading="lazy"
+            src="about:blank"
+            title="Portfolio video"
+          ></iframe>
+        </div>
+
+        <p class="portfolio-video-help">
+          If Facebook blocks the embed in your browser, use the original link.
+        </p>
+      </div>
+    </div>
     <script src="js/main.js"></script>
     <script src="js/resume-download.js"></script>
     <script src="js/testimonials.js"></script>
+    <script src="js/video-modal.js"></script>
   </body>
 </html>

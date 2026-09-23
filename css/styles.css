@@ -9237,3 +9237,127 @@ video {
     letter-spacing: 0.07em !important;
   }
 }
+
+/* ===== portfolio-video-modal ===== */
+.portfolio-video-modal[hidden] {
+  display: none !important;
+}
+
+.portfolio-video-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.portfolio-video-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(7, 12, 23, 0.66);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.portfolio-video-dialog {
+  position: relative;
+  z-index: 1;
+  width: min(820px, 100%);
+  max-height: 90vh;
+  padding: 20px;
+  border-radius: 24px;
+  background: #0d1630;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.32);
+  overflow: auto;
+}
+
+.portfolio-video-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  cursor: pointer;
+}
+
+.portfolio-video-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding-right: 52px;
+}
+
+.portfolio-video-head small {
+  color: #97abc4;
+  font-size: 0.58rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.portfolio-video-head h3 {
+  margin: 7px 0 0;
+  color: #fff;
+}
+
+.portfolio-video-original {
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: #fff;
+  color: #10264a;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.portfolio-video-frame-wrap {
+  margin-top: 18px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #091120;
+}
+
+.portfolio-video-frame-wrap iframe {
+  display: block;
+  width: 100%;
+  height: min(72vh, 780px);
+  border: 0;
+}
+
+.portfolio-video-help {
+  margin: 12px 0 0;
+  color: #9fb0c4;
+  font-size: 0.7rem;
+}
+
+body.video-modal-open {
+  overflow: hidden;
+}
+
+@media (max-width: 700px) {
+  .portfolio-video-modal {
+    padding: 14px;
+  }
+
+  .portfolio-video-dialog {
+    padding: 16px;
+  }
+
+  .portfolio-video-head {
+    flex-direction: column;
+    padding-right: 40px;
+  }
+
+  .portfolio-video-frame-wrap iframe {
+    height: min(68vh, 620px);
+  }
+}
