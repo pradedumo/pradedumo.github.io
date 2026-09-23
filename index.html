@@ -7203,6 +7203,71 @@ img,svg,video{max-width:100%}
 }
 </style>
 
+
+<style id="v51-mobile-hero-name-readability">
+/* =========================
+   V51 — Mobile hero name readability
+   Improve contrast over the suit without adding a heavy outline.
+   ========================= */
+@media(max-width:700px){
+  .hero-v12-mobile-intro{
+    position:relative !important;
+  }
+
+  .hero-v12-mobile-name,
+  .hero-v12-mobile-roles{
+    position:relative !important;
+    z-index:2 !important;
+  }
+
+  .hero-v12-mobile-name{
+    display:inline-block !important;
+    margin:0 auto !important;
+    padding:8px 14px 6px !important;
+    border-radius:16px !important;
+    background:rgba(255, 252, 247, .72) !important;
+    border:1px solid rgba(255,255,255,.72) !important;
+    box-shadow:
+      0 10px 26px rgba(15, 24, 38, .10),
+      0 0 0 1px rgba(255,255,255,.22) inset !important;
+    backdrop-filter:blur(12px) saturate(1.05) !important;
+    -webkit-backdrop-filter:blur(12px) saturate(1.05) !important;
+    -webkit-text-stroke:0.45px rgba(255,255,255,.92) !important;
+    text-shadow:
+      0 1px 0 rgba(255,255,255,.78),
+      0 2px 14px rgba(255,255,255,.38) !important;
+  }
+
+  .hero-v12-mobile-roles{
+    display:inline-block !important;
+    margin:8px auto 0 !important;
+    padding:7px 12px !important;
+    border-radius:14px !important;
+    background:rgba(255, 252, 247, .58) !important;
+    border:1px solid rgba(255,255,255,.62) !important;
+    box-shadow:0 8px 22px rgba(15, 24, 38, .08) !important;
+    backdrop-filter:blur(10px) !important;
+    -webkit-backdrop-filter:blur(10px) !important;
+    text-shadow:0 1px 10px rgba(255,255,255,.28) !important;
+  }
+
+  .hero-v12-mobile-roles span{
+    color:#97a4b8 !important;
+  }
+}
+
+@media(max-width:360px){
+  .hero-v12-mobile-name{
+    padding:7px 12px 5px !important;
+    border-radius:14px !important;
+  }
+  .hero-v12-mobile-roles{
+    padding:6px 10px !important;
+    border-radius:12px !important;
+  }
+}
+</style>
+
 </head>
 <body>
 <div class="nav-holder"><div class="nav-pill" id="navPill">
