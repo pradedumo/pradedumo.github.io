@@ -7268,6 +7268,136 @@ img,svg,video{max-width:100%}
 }
 </style>
 
+
+<style id="v52-featured-project-desktop-fix">
+/* =========================
+   V52 — FEATURED AI PROJECT DESKTOP FIX
+   Remove the old sticky/scroll-expansion behavior on desktop.
+   Keep the approved mobile presentation untouched.
+   ========================= */
+@media(min-width:701px){
+  .video-section.video-real-project{
+    height:auto !important;
+    min-height:0 !important;
+    position:relative !important;
+    overflow:hidden !important;
+    padding:112px 0 88px !important;
+    background:var(--navy) !important;
+  }
+
+  .video-real-project .video-sticky{
+    position:relative !important;
+    top:auto !important;
+    height:auto !important;
+    min-height:0 !important;
+    display:block !important;
+    overflow:visible !important;
+  }
+
+  .video-real-project .video-top{
+    position:relative !important;
+    top:auto !important;
+    left:auto !important;
+    transform:none !important;
+    width:min(1180px,calc(100% - 64px)) !important;
+    margin:0 auto 46px !important;
+    z-index:3 !important;
+  }
+
+  .video-real-project .video-top h2{
+    max-width:900px !important;
+    margin:10px 0 0 !important;
+    font-size:clamp(3.4rem,5.8vw,6rem) !important;
+    line-height:.92 !important;
+  }
+
+  .video-real-project #videoFrame,
+  .video-real-project .real-video-frame{
+    position:relative !important;
+    width:min(1040px,calc(100% - 80px)) !important;
+    min-width:0 !important;
+    max-width:1040px !important;
+    margin:0 auto !important;
+    aspect-ratio:16 / 9 !important;
+    border-radius:26px !important;
+    overflow:hidden !important;
+    transform:none !important;
+  }
+
+  .video-real-project .featured-reel-copy{
+    padding:clamp(26px,3vw,44px) !important;
+  }
+
+  .video-real-project .featured-reel-copy h3{
+    font-size:clamp(2rem,3.1vw,3.35rem) !important;
+  }
+
+  .video-real-project .featured-reel-copy p{
+    max-width:560px !important;
+    font-size:clamp(.76rem,.88vw,.92rem) !important;
+  }
+
+  .video-real-project .featured-metrics{
+    gap:8px !important;
+    margin-top:20px !important;
+  }
+
+  .video-real-project .featured-metrics > div{
+    min-width:0 !important;
+    padding:10px !important;
+  }
+
+  .video-real-project .video-process{
+    position:relative !important;
+    left:auto !important;
+    bottom:auto !important;
+    transform:none !important;
+    width:min(1040px,calc(100% - 80px)) !important;
+    margin:38px auto 0 !important;
+    display:grid !important;
+    grid-template-columns:repeat(5,minmax(0,1fr)) !important;
+    gap:12px !important;
+    align-items:center !important;
+    justify-content:stretch !important;
+  }
+
+  .video-real-project .video-process span{
+    min-width:0 !important;
+    text-align:center !important;
+    padding:11px 8px !important;
+    border-top:1px solid rgba(255,255,255,.10) !important;
+    color:#9fb0c4 !important;
+  }
+}
+
+@media(min-width:701px) and (max-width:980px){
+  .video-section.video-real-project{
+    padding:92px 0 72px !important;
+  }
+
+  .video-real-project .video-top{
+    width:calc(100% - 40px) !important;
+    margin-bottom:34px !important;
+  }
+
+  .video-real-project #videoFrame,
+  .video-real-project .real-video-frame{
+    width:calc(100% - 40px) !important;
+  }
+
+  .video-real-project .video-process{
+    width:calc(100% - 40px) !important;
+    grid-template-columns:repeat(5,minmax(0,1fr)) !important;
+    gap:7px !important;
+  }
+
+  .video-real-project .video-process span{
+    font-size:.56rem !important;
+    letter-spacing:.07em !important;
+  }
+}
+</style>
+
 </head>
 <body>
 <div class="nav-holder"><div class="nav-pill" id="navPill">
@@ -8151,7 +8281,14 @@ workOptions.forEach((option,i)=>{
   option.addEventListener('click',()=>activateWork(i));
 });
 activateWork(0);
-const vs=document.querySelector('.video-section'),vf=document.getElementById('videoFrame');function updateVideo(){if(innerWidth<=700){vf.style.removeProperty('width');vf.style.removeProperty('border-radius');return;}const r=vs.getBoundingClientRect(),total=Math.max(r.height-innerHeight,1),p=Math.min(Math.max(-r.top/total,0),1),s=.38,e=.90;vf.style.width=((s+(e-s)*p)*100)+'vw';vf.style.borderRadius=(26-21*p)+'px'}addEventListener('scroll',updateVideo,{passive:true});addEventListener('resize',updateVideo);updateVideo();
+const vs=document.querySelector('.video-section'),vf=document.getElementById('videoFrame');
+function updateVideo(){
+  if(!vf) return;
+  vf.style.removeProperty('width');
+  vf.style.removeProperty('border-radius');
+}
+addEventListener('resize',updateVideo);
+updateVideo();
 const tw=document.getElementById('timelineWrap'),tp=document.getElementById('timelineProgress');function updateTimeline(){const r=tw.getBoundingClientRect(),start=innerHeight*.45,p=Math.min(Math.max((start-r.top)/(r.height+start-innerHeight*.35),0),1);tp.style.height=(p*100)+'%'}addEventListener('scroll',updateTimeline,{passive:true});updateTimeline();
 </script>
 <script id="resume-download-behavior">
