@@ -39,11 +39,15 @@ jobs:
         with:
           # linkedin.com, fiverr.com, upwork.com block non-browser requests
           # (403/999) regardless of link validity, so they're excluded rather
-          # than checked.
+          # than checked. Self-referential absolute URLs (canonical, og:url,
+          # og:image, twitter:image) are remapped to the checked-out repo so
+          # they're verified against real files instead of racing GitHub
+          # Pages' deploy.
           args: >-
             --no-progress
             --exclude "linkedin\.com"
             --exclude "fiverr\.com"
             --exclude "upwork\.com"
+            --remap "https://pradedumo.github.io file://${{ github.workspace }}"
             index.html
           fail: true
