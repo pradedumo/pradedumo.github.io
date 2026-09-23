@@ -5,6 +5,8 @@ on:
     branches: [main]
     paths:
       - "index.html"
+      - "css/**"
+      - "js/**"
       - ".htmlhintrc"
       - ".prettierignore"
       - "package.json"
@@ -12,6 +14,8 @@ on:
   pull_request:
     paths:
       - "index.html"
+      - "css/**"
+      - "js/**"
       - ".htmlhintrc"
       - ".prettierignore"
       - "package.json"

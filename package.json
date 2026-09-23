@@ -3,8 +3,8 @@
   "private": true,
   "scripts": {
     "prepare": "git config core.hooksPath .githooks",
-    "format:check": "prettier --check \"index.html\"",
-    "format": "prettier --write \"index.html\"",
+    "format:check": "prettier --check \"index.html\" \"css/**/*.css\" \"js/**/*.js\"",
+    "format": "prettier --write \"index.html\" \"css/**/*.css\" \"js/**/*.js\"",
     "lint:html": "htmlhint index.html"
   },
   "devDependencies": {

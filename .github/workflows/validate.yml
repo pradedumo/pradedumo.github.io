@@ -5,9 +5,15 @@ on:
     branches: [main]
     paths:
       - "index.html"
+      - "css/**"
+      - "js/**"
+      - "assets/**"
   pull_request:
     paths:
       - "index.html"
+      - "css/**"
+      - "js/**"
+      - "assets/**"
   workflow_dispatch:
 
 jobs:
