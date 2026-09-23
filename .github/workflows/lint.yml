@@ -1,0 +1,41 @@
+name: Lint
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "index.html"
+      - ".htmlhintrc"
+      - ".prettierignore"
+      - "package.json"
+      - "package-lock.json"
+  pull_request:
+    paths:
+      - "index.html"
+      - ".htmlhintrc"
+      - ".prettierignore"
+      - "package.json"
+      - "package-lock.json"
+  workflow_dispatch:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check formatting (Prettier)
+        run: npm run format:check
+
+      - name: Lint HTML (HTMLHint)
+        run: npm run lint:html

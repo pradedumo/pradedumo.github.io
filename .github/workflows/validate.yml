@@ -1,0 +1,43 @@
+name: Validate index.html
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "index.html"
+  pull_request:
+    paths:
+      - "index.html"
+  workflow_dispatch:
+
+jobs:
+  w3c-validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: W3C HTML validation
+        uses: Cyb3r-Jak3/html5validator-action@v7.2.0
+        with:
+          root: .
+
+  link-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check for broken links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          # linkedin.com, fiverr.com, upwork.com block non-browser requests
+          # (403/999) regardless of link validity, so they're excluded rather
+          # than checked.
+          args: >-
+            --no-progress
+            --exclude "linkedin\.com"
+            --exclude "fiverr\.com"
+            --exclude "upwork\.com"
+            index.html
+          fail: true

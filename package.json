@@ -1,0 +1,14 @@
+{
+  "name": "pradedumo-portfolio",
+  "private": true,
+  "scripts": {
+    "prepare": "git config core.hooksPath .githooks",
+    "format:check": "prettier --check \"index.html\"",
+    "format": "prettier --write \"index.html\"",
+    "lint:html": "htmlhint index.html"
+  },
+  "devDependencies": {
+    "htmlhint": "1.1.4",
+    "prettier": "3.3.3"
+  }
+}

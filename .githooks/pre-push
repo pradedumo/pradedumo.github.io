@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Final local safety net before code leaves the machine: re-checks
+# formatting and HTML standards, mirroring .github/workflows/lint.yml.
+# The pre-commit hook already auto-fixes formatting on commit, so this
+# should normally be a no-op — it only catches commits made with
+# --no-verify or on another machine.
+set -euo pipefail
+
+cd "$(git rev-parse --show-toplevel)"
+
+echo "Checking Prettier formatting..."
+npm run --silent format:check
+
+echo "Linting HTML (HTMLHint)..."
+npm run --silent lint:html
+
+echo "Pre-push checks passed."
