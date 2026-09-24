@@ -9430,40 +9430,26 @@ body.video-modal-open {
 
 .ai-gallery-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
 }
 
-.ai-gallery-card {
-  min-width: 0;
+/* GALLERY ITEM */
+
+.ai-gallery-item {
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 5;
   overflow: hidden;
-  border-radius: 24px;
-  background: rgba(255, 255, 255, 0.72);
-  border: 1px solid rgba(12, 35, 72, 0.08);
-  box-shadow: 0 20px 60px rgba(25, 37, 55, 0.06);
-}
-
-.ai-gallery-featured {
-  grid-column: span 2;
-  display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+  border-radius: 18px;
+  background: #e9e5de;
+  text-decoration: none;
+  isolation: isolate;
 }
 
 /* IMAGE */
 
-.ai-gallery-media {
-  position: relative;
-  display: block;
-  min-height: 390px;
-  overflow: hidden;
-  background: #dfe4e9;
-}
-
-.ai-gallery-featured .ai-gallery-media {
-  min-height: 530px;
-}
-
-.ai-gallery-media img {
+.ai-gallery-item img {
   width: 100%;
   height: 100%;
   display: block;
@@ -9473,112 +9459,91 @@ body.video-modal-open {
     filter 0.4s ease;
 }
 
-.ai-gallery-card:hover .ai-gallery-media img {
-  transform: scale(1.035);
-}
+/* DARK HOVER OVERLAY */
 
 .ai-gallery-overlay {
   position: absolute;
   inset: 0;
+  z-index: 2;
   display: flex;
-  align-items: flex-start;
+  align-items: flex-end;
   justify-content: space-between;
-  padding: 20px;
+  gap: 20px;
+  padding: 24px;
   background: linear-gradient(
-    to bottom,
-    rgba(8, 18, 34, 0.28),
-    transparent 35%,
-    rgba(8, 18, 34, 0.18)
+    to top,
+    rgba(7, 18, 38, 0.88) 0%,
+    rgba(7, 18, 38, 0.35) 45%,
+    transparent 72%
   );
+  opacity: 0;
+  transition: opacity 0.35s ease;
 }
 
-.ai-gallery-type {
-  display: inline-flex;
-  align-items: center;
-  min-height: 32px;
-  padding: 0 12px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.86);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  color: #12274b;
-  font-size: 0.62rem;
-  font-weight: 700;
+/* IMAGE HOVER */
+
+.ai-gallery-item:hover img {
+  transform: scale(1.055);
 }
 
-.ai-gallery-play {
+.ai-gallery-item:hover .ai-gallery-overlay {
+  opacity: 1;
+}
+
+/* CONTENT */
+
+.ai-gallery-item-copy {
+  transform: translateY(12px);
+  transition: transform 0.35s ease;
+}
+
+.ai-gallery-item:hover .ai-gallery-item-copy {
+  transform: translateY(0);
+}
+
+.ai-gallery-item-copy > span {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.ai-gallery-item-copy h3 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1.25rem, 1.7vw, 1.9rem);
+  line-height: 1;
+  letter-spacing: -0.035em;
+}
+
+.ai-gallery-item-copy p {
+  margin: 9px 0 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.67rem;
+  line-height: 1.4;
+}
+
+/* PLAY / VIEW BUTTON */
+
+.ai-gallery-action {
+  flex: 0 0 auto;
   display: grid;
   place-items: center;
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.9);
-  color: #12274b;
-  font-size: 0.8rem;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  background: rgba(255, 255, 255, 0.92);
+  color: #10264a;
+  font-size: 0.72rem;
+  transform: translateY(12px);
+  transition: transform 0.35s ease;
 }
 
-/* COPY */
-
-.ai-gallery-copy {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 22px;
-  padding: 26px;
-}
-
-.ai-gallery-featured .ai-gallery-copy {
-  align-content: center;
-  padding: clamp(30px, 5vw, 64px);
-}
-
-.ai-gallery-number {
-  color: #a6afba;
-  font-size: 0.64rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-}
-
-.ai-gallery-copy small {
-  display: block;
-  margin-bottom: 9px;
-  color: #9a7657;
-  font-size: 0.58rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.ai-gallery-copy h3 {
-  margin: 0;
-  color: #0d2348;
-  font-size: clamp(1.35rem, 2vw, 2.25rem);
-  line-height: 1;
-  letter-spacing: -0.04em;
-}
-
-.ai-gallery-copy p {
-  margin: 14px 0 0;
-  max-width: 480px;
-  color: #697487;
-  font-size: 0.82rem;
-  line-height: 1.65;
-}
-
-.ai-gallery-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px;
-  margin-top: 20px;
-}
-
-.ai-gallery-tags span {
-  padding: 7px 9px;
-  border-radius: 8px;
-  background: #eef1f5;
-  color: #526078;
-  font-size: 0.58rem;
-  font-weight: 700;
+.ai-gallery-item:hover .ai-gallery-action {
+  transform: translateY(0);
 }
 
 /* FOOTER */
@@ -9614,12 +9579,8 @@ body.video-modal-open {
     gap: 22px;
   }
 
-  .ai-gallery-featured {
-    grid-template-columns: 1fr;
-  }
-
-  .ai-gallery-featured .ai-gallery-media {
-    min-height: 480px;
+  .ai-gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -9648,53 +9609,37 @@ body.video-modal-open {
     font-size: 0.82rem;
   }
 
-  .ai-gallery-grid {
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
-
-  .ai-gallery-featured {
-    grid-column: auto;
-    display: block;
-  }
-
-  .ai-gallery-media,
-  .ai-gallery-featured .ai-gallery-media {
-    min-height: 390px;
-  }
-
-  .ai-gallery-copy,
-  .ai-gallery-featured .ai-gallery-copy {
-    grid-template-columns: auto 1fr;
-    gap: 16px;
-    padding: 22px 18px 24px;
-  }
-
-  .ai-gallery-copy h3 {
-    font-size: 1.45rem;
-  }
-
-  .ai-gallery-copy p {
-    font-size: 0.76rem;
-  }
-
   .ai-gallery-footer {
     margin-top: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .ai-gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .ai-gallery-item {
+    aspect-ratio: 4 / 5;
+    border-radius: 16px;
+  }
+
+  /* No hover on phones — keep useful information visible */
+  .ai-gallery-overlay {
+    opacity: 1;
+    padding: 20px;
+  }
+
+  .ai-gallery-item-copy,
+  .ai-gallery-action {
+    transform: none;
   }
 }
 
 /* VERY SMALL */
 
 @media (max-width: 360px) {
-  .ai-gallery-media,
-  .ai-gallery-featured .ai-gallery-media {
-    min-height: 330px;
-  }
-
-  .ai-gallery-copy {
-    gap: 12px;
-  }
-
   .ai-gallery-types span {
     font-size: 0.57rem;
   }
