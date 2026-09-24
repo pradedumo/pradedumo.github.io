@@ -502,8 +502,8 @@
               <span class="num">01</span>
               <span class="label">QA &amp;<br />Engineering</span>
               <span class="mini"
-                >Feature QA, automation, API testing, and embedded
-                systems.</span
+                >Functional testing, defect investigation, regression, and
+                automation.</span
               >
             </button>
             <button class="work-option" data-work="1">
@@ -536,94 +536,423 @@
                     <small>Real project experience</small>
                     <h4>QA case studies</h4>
                   </div>
-                  <span>Web · Mobile · Embedded</span>
+                  <span>Functional · Investigation · Automation</span>
                 </div>
-                <article class="qa-case qa-case-featured">
-                  <div class="qa-case-index">01</div>
-                  <div class="qa-case-content">
-                    <div class="qa-case-meta">
-                      <span>UJET · 2024–Present</span>
-                      <span>Feature QA</span>
+
+                <div class="qa-case-carousel" id="qaCaseCarousel">
+                  <div class="qa-case-carousel-track" id="qaCaseCarouselTrack">
+                    <div class="qa-case-slide" data-slide-index="0">
+                      <!-- CASE 01 — CALL RECORDING -->
+                      <article class="qa-case qa-case-featured">
+                        <div class="qa-case-index">01</div>
+
+                        <div class="qa-case-content">
+                          <div class="qa-case-meta">
+                            <span>Functional / Regression QA</span>
+                          </div>
+
+                          <h5>Mono / Dual Call Recording Validation</h5>
+
+                          <p class="qa-case-intro">
+                            Validated and regression-tested call-recording
+                            behavior across channel mode, segmentation settings,
+                            participant transitions, and hold scenarios.
+                          </p>
+
+                          <div class="qa-case-columns">
+                            <div>
+                              <small>Challenge</small>
+                              <p>
+                                Recording output depended on multiple settings
+                                and live call events. A simple two-party call
+                                could pass while join, leave, rejoin,
+                                segmentation, or hold scenarios exposed
+                                different issues.
+                              </p>
+                            </div>
+
+                            <div>
+                              <small>Approach</small>
+                              <p>
+                                Built controlled call flows and compared
+                                generated recordings against expected segment
+                                count, participant timelines, audio capture, and
+                                channel behavior.
+                              </p>
+                            </div>
+
+                            <div>
+                              <small>Outcome</small>
+                              <p>
+                                Created reproducible scenarios that helped
+                                isolate recording inconsistencies and verify
+                                fixes through regression.
+                              </p>
+                            </div>
+                          </div>
+
+                          <div class="qa-case-role">
+                            <small>My role</small>
+
+                            <div>
+                              <span>Scenario Design</span>
+                              <span>Functional QA</span>
+                              <span>Regression Testing</span>
+                              <span>Audio Validation</span>
+                              <span>Defect Investigation</span>
+                            </div>
+                          </div>
+
+                          <button
+                            class="qa-case-expand"
+                            data-qa-case-detail="qaCaseDetail01"
+                            data-qa-case-title="Mono / Dual Call Recording Validation"
+                            type="button"
+                          >
+                            View full case study →
+                          </button>
+
+                          <template id="qaCaseDetail01">
+                            <!-- TEST DIMENSIONS -->
+                            <div class="qa-recording-matrix">
+                              <div class="qa-recording-dimension">
+                                <small>Channel</small>
+                                <div>
+                                  <span>Mono</span>
+                                  <span>Dual</span>
+                                </div>
+                              </div>
+
+                              <div class="qa-recording-dimension">
+                                <small>Segmentation</small>
+                                <div>
+                                  <span>ON</span>
+                                  <span>OFF</span>
+                                </div>
+                              </div>
+
+                              <div class="qa-recording-dimension">
+                                <small>Participant Events</small>
+                                <div>
+                                  <span>Join</span>
+                                  <span>Leave</span>
+                                  <span>Rejoin</span>
+                                </div>
+                              </div>
+
+                              <div class="qa-recording-dimension">
+                                <small>Audio Validation</small>
+                                <div>
+                                  <span>Hold Music</span>
+                                  <span>Channel Output</span>
+                                </div>
+                              </div>
+                            </div>
+
+                            <!-- SEGMENTATION RULE -->
+                            <div class="qa-recording-rule">
+                              <div class="qa-recording-rule-head">
+                                <small>Segmentation behavior</small>
+                                <strong
+                                  >Same expected behavior in Mono and
+                                  Dual</strong
+                                >
+                              </div>
+
+                              <div class="qa-segment-flow">
+                                <div class="qa-segment-option">
+                                  <span class="qa-setting">SEGMENT ON</span>
+
+                                  <div class="qa-flow-row">
+                                    <div>
+                                      <small>Agent 1 + End User</small>
+                                      <strong>Segment 1</strong>
+                                    </div>
+
+                                    <i>→</i>
+
+                                    <div>
+                                      <small>Agent 2 joins</small>
+                                      <strong>Segment 2</strong>
+                                    </div>
+
+                                    <i>→</i>
+
+                                    <div>
+                                      <small>Agent 2 leaves + rejoins</small>
+                                      <strong>Segment 3</strong>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="qa-segment-option">
+                                  <span class="qa-setting">SEGMENT OFF</span>
+
+                                  <div class="qa-single-recording">
+                                    <div>
+                                      <small>Agent participation changes</small>
+                                      <strong>Join · Leave · Rejoin</strong>
+                                    </div>
+
+                                    <i>→</i>
+
+                                    <div>
+                                      <small>Recording output</small>
+                                      <strong>1 complete recording</strong>
+                                    </div>
+                                  </div>
+
+                                  <p>
+                                    Audio reflects the periods when each
+                                    participant was present based on their join
+                                    and leave timestamps.
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+
+                            <!-- HOLD RULE -->
+                            <div class="qa-hold-grid">
+                              <div class="qa-hold-card mono">
+                                <span>MONO + HOLD</span>
+
+                                <strong>End User hears hold music</strong>
+
+                                <div class="qa-hold-arrow">↓</div>
+
+                                <b>Hold music is NOT recorded</b>
+                              </div>
+
+                              <div class="qa-hold-card dual">
+                                <span>DUAL + HOLD</span>
+
+                                <strong>End User hears hold music</strong>
+
+                                <div class="qa-hold-arrow">↓</div>
+
+                                <b>Hold music IS recorded</b>
+
+                                <small>Recorded on the End User channel</small>
+                              </div>
+                            </div>
+                          </template>
+                        </div>
+                      </article>
                     </div>
-                    <h5>End-to-End Feature QA</h5>
-                    <p class="qa-case-intro">
-                      Owned features from requirements review through test
-                      planning, execution, defect triage, and release readiness
-                      across web and Android.
-                    </p>
-                    <div class="qa-case-columns">
-                      <div>
-                        <small>Challenge</small>
+
+                    <div class="qa-case-slide" data-slide-index="1">
+                      <!-- CASE 02 — DNC -->
+                      <article
+                        class="qa-case qa-case-small qa-investigation-case"
+                      >
+                        <div class="qa-case-index">02</div>
+
+                        <div class="qa-case-meta">
+                          <span>Defect Investigation</span>
+                        </div>
+
+                        <h5>DNC Call Blocking Investigation</h5>
+
                         <p>
-                          Keep requirements testable and releases stable across
-                          browsers, devices, APIs, and sprint changes.
+                          Investigated an incoming test call that was not
+                          connecting even though the phone number was not
+                          visible in the DNC UI table.
                         </p>
-                      </div>
-                      <div>
-                        <small>Approach</small>
-                        <p>
-                          Test planning, BrowserStack/TestRail, Postman, JIRA
-                          triage, and Agile reviews.
-                        </p>
-                      </div>
-                      <div>
-                        <small>Outcome</small>
-                        <p>
-                          Clearer release readiness and earlier identification
-                          of untestable stories.
-                        </p>
-                      </div>
+
+                        <div class="qa-case-result">
+                          <small>Outcome</small>
+
+                          <strong>
+                            Provided backend evidence showing that the DNC entry
+                            existed even though the corresponding number was not
+                            visible in the UI.
+                          </strong>
+                        </div>
+
+                        <div class="qa-case-role">
+                          <small>My role</small>
+
+                          <div>
+                            <span>Defect Reproduction</span>
+                            <span>UI Validation</span>
+                            <span>Database Investigation</span>
+                            <span>Data Comparison</span>
+                          </div>
+                        </div>
+
+                        <button
+                          class="qa-case-expand"
+                          data-qa-case-detail="qaCaseDetail02"
+                          data-qa-case-title="DNC Call Blocking Investigation"
+                          type="button"
+                        >
+                          View full case study →
+                        </button>
+
+                        <template id="qaCaseDetail02">
+                          <div class="qa-investigation-flow">
+                            <div>
+                              <small>01</small>
+                              <strong>Incoming Call</strong>
+                              <span>Not connected</span>
+                            </div>
+
+                            <i>↓</i>
+
+                            <div>
+                              <small>02</small>
+                              <strong>DNC UI</strong>
+                              <span>Number not visible</span>
+                            </div>
+
+                            <i>↓</i>
+
+                            <div>
+                              <small>03</small>
+                              <strong>Database</strong>
+                              <span>Hashed entry found</span>
+                            </div>
+                          </div>
+
+                          <div class="qa-mismatch-result">
+                            <span>UI STATE</span>
+                            <strong>≠</strong>
+                            <span>BACKEND STATE</span>
+                          </div>
+                        </template>
+                      </article>
                     </div>
-                    <div class="qa-case-tools">
-                      <span>TestRail</span><span>BrowserStack</span
-                      ><span>Postman</span><span>JIRA</span><span>Agile</span>
+
+                    <div class="qa-case-slide" data-slide-index="2">
+                      <!-- CASE 03 — AUTOMATION -->
+                      <article class="qa-case qa-case-small qa-automation-case">
+                        <div class="qa-case-index">03</div>
+
+                        <div class="qa-case-meta">
+                          <span>Test Automation</span>
+                        </div>
+
+                        <h5>TestRail → WebdriverIO + TypeScript</h5>
+
+                        <p>
+                          Reviewed suitable TestRail regression cases and
+                          converted them into automated WebdriverIO tests using
+                          TypeScript while preserving the original test intent
+                          and expected behavior.
+                        </p>
+
+                        <div class="qa-case-result">
+                          <small>Outcome</small>
+
+                          <strong>
+                            Helped move repeatable regression coverage into a
+                            more maintainable automated testing workflow.
+                          </strong>
+                        </div>
+
+                        <div class="qa-case-role">
+                          <small>My role</small>
+
+                          <div>
+                            <span>Test Case Analysis</span>
+                            <span>Automation Development</span>
+                            <span>WebdriverIO</span>
+                            <span>TypeScript</span>
+                            <span>Regression Testing</span>
+                          </div>
+                        </div>
+
+                        <button
+                          class="qa-case-expand"
+                          data-qa-case-detail="qaCaseDetail03"
+                          data-qa-case-title="TestRail → WebdriverIO + TypeScript"
+                          type="button"
+                        >
+                          View full case study →
+                        </button>
+
+                        <template id="qaCaseDetail03">
+                          <div class="qa-automation-flow">
+                            <div>
+                              <span>01</span>
+                              <strong>TestRail</strong>
+                              <small>Review test case</small>
+                            </div>
+
+                            <i>→</i>
+
+                            <div>
+                              <span>02</span>
+                              <strong>Analyze</strong>
+                              <small>Automation candidate</small>
+                            </div>
+
+                            <i>→</i>
+
+                            <div>
+                              <span>03</span>
+                              <strong>WebdriverIO</strong>
+                              <small>Implement test flow</small>
+                            </div>
+
+                            <i>→</i>
+
+                            <div>
+                              <span>04</span>
+                              <strong>TypeScript</strong>
+                              <small>Execute + validate</small>
+                            </div>
+                          </div>
+                        </template>
+                      </article>
                     </div>
                   </div>
-                </article>
-                <div class="qa-case-small-grid">
-                  <article class="qa-case qa-case-small">
-                    <div class="qa-case-index">02</div>
-                    <div class="qa-case-meta">
-                      <span>UJET</span>
-                      <span>Automation</span>
-                    </div>
-                    <h5>JavaScript → TypeScript Test Migration</h5>
-                    <p>
-                      Migrated a legacy JavaScript test suite to a more
-                      maintainable TypeScript framework.
-                    </p>
-                    <div class="qa-case-result">
-                      <small>Outcome</small>
-                      <strong>More maintainable test automation.</strong>
-                    </div>
-                    <div class="qa-case-tools">
-                      <span>TypeScript</span><span>JavaScript</span
-                      ><span>CI/CD</span>
-                    </div>
-                  </article>
-                  <article class="qa-case qa-case-small">
-                    <div class="qa-case-index">03</div>
-                    <div class="qa-case-meta">
-                      <span>Accenture · Automotive</span>
-                      <span>Embedded QA</span>
-                    </div>
-                    <h5>Android VTS → PyTest</h5>
-                    <p>
-                      Rewrote Android VTS cases in PyTest and supported remote
-                      automotive infotainment test environments.
-                    </p>
-                    <div class="qa-case-result">
-                      <small>Outcome</small>
-                      <strong
-                        >Improved reliability and reduced execution
-                        time.</strong
-                      >
-                    </div>
-                    <div class="qa-case-tools">
-                      <span>Python</span><span>PyTest</span
-                      ><span>Android VTS</span>
-                    </div>
-                  </article>
+
+                  <button
+                    aria-label="Previous case study"
+                    class="qa-case-carousel-arrow prev"
+                    id="qaCasePrev"
+                    type="button"
+                  >
+                    ‹
+                  </button>
+                  <button
+                    aria-label="Next case study"
+                    class="qa-case-carousel-arrow next"
+                    id="qaCaseNext"
+                    type="button"
+                  >
+                    ›
+                  </button>
+                </div>
+
+                <div
+                  aria-label="Case studies"
+                  class="qa-case-carousel-dots"
+                  id="qaCaseCarouselDots"
+                  role="tablist"
+                >
+                  <button
+                    aria-label="Show case study 1"
+                    aria-selected="true"
+                    data-slide-index="0"
+                    role="tab"
+                    type="button"
+                  ></button>
+                  <button
+                    aria-label="Show case study 2"
+                    aria-selected="false"
+                    data-slide-index="1"
+                    role="tab"
+                    type="button"
+                  ></button>
+                  <button
+                    aria-label="Show case study 3"
+                    aria-selected="false"
+                    data-slide-index="2"
+                    role="tab"
+                    type="button"
+                  ></button>
                 </div>
               </div>
               <div class="work-scene-caption">
@@ -1532,9 +1861,37 @@
         </p>
       </div>
     </div>
+    <div aria-hidden="true" class="qa-case-modal" hidden id="qaCaseModal">
+      <div class="qa-case-modal-backdrop" data-close-qa-case="true"></div>
+
+      <div
+        aria-labelledby="qaCaseModalTitle"
+        aria-modal="true"
+        class="qa-case-modal-dialog"
+        role="dialog"
+      >
+        <button
+          aria-label="Close case study"
+          class="qa-case-modal-close"
+          id="qaCaseModalClose"
+          type="button"
+        >
+          ✕
+        </button>
+
+        <div class="qa-case-modal-head">
+          <small>Full case study</small>
+          <h3 id="qaCaseModalTitle">QA case study</h3>
+        </div>
+
+        <div class="qa-case-modal-body" id="qaCaseModalBody"></div>
+      </div>
+    </div>
     <script src="js/main.js"></script>
     <script src="js/resume-download.js"></script>
     <script src="js/testimonials.js"></script>
     <script src="js/video-modal.js"></script>
+    <script src="js/qa-case-modal.js"></script>
+    <script src="js/qa-carousel.js"></script>
   </body>
 </html>
