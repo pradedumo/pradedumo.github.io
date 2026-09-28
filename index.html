@@ -61,6 +61,28 @@
     <link href="assets/images/favicon.png" rel="icon" type="image/png" />
     <link href="assets/images/favicon.png" rel="apple-touch-icon" />
     <link href="css/styles.css" rel="stylesheet" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Paul Ryan Dedumo",
+        "url": "https://pradedumo.github.io/",
+        "image": "https://pradedumo.github.io/assets/images/og-cover.png",
+        "jobTitle": ["QA Engineer", "AI Video Creator", "Sales Researcher"],
+        "email": "mailto:pauldedumo@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Calamba",
+          "addressRegion": "Laguna",
+          "addressCountry": "PH"
+        },
+        "alumniOf": "University of San Carlos",
+        "sameAs": [
+          "https://www.linkedin.com/in/ryandedumo/",
+          "https://github.com/pradedumo"
+        ]
+      }
+    </script>
   </head>
   <body>
     <div class="nav-holder">
@@ -1120,7 +1142,6 @@
                     <div class="ai-reel-metrics">
                       <div><b>212</b><small>Views</small></div>
                       <div><b>197</b><small>Viewers</small></div>
-                      <div><b>3s</b><small>Avg watch</small></div>
                     </div>
                   </a>
                   <a
@@ -1148,7 +1169,6 @@
                     <div class="ai-reel-metrics">
                       <div><b>262</b><small>Views</small></div>
                       <div><b>231</b><small>Viewers</small></div>
-                      <div><b>4s</b><small>Avg watch</small></div>
                     </div>
                   </a>
                   <a
@@ -1176,7 +1196,6 @@
                     <div class="ai-reel-metrics">
                       <div><b>1,296</b><small>Views</small></div>
                       <div><b>1,184</b><small>Viewers</small></div>
-                      <div><b>5s</b><small>Avg watch</small></div>
                     </div>
                   </a>
                 </div>
@@ -1365,10 +1384,23 @@
               advertising.
             </p>
 
-            <div class="ai-gallery-types">
-              <span>Video Ads</span>
-              <span>UGC / Lifestyle</span>
-              <span>Static Ads</span>
+            <div
+              class="ai-gallery-types"
+              role="group"
+              aria-label="Filter gallery"
+            >
+              <button class="is-active" data-gallery-filter="all" type="button">
+                All
+              </button>
+              <button data-gallery-filter="video" type="button">
+                Video Ads
+              </button>
+              <button data-gallery-filter="ugc" type="button">
+                UGC / Lifestyle
+              </button>
+              <button data-gallery-filter="spec" type="button">
+                Spec work
+              </button>
             </div>
           </div>
         </div>
@@ -1377,6 +1409,7 @@
           <!-- 01 -->
           <a
             class="ai-gallery-item reveal"
+            data-gallery-type="video"
             href="https://www.facebook.com/reel/1782567662755000/"
             data-portfolio-video="true"
             data-video-title="Rechargeable Mini Vacuum"
@@ -1405,6 +1438,7 @@
           <!-- 02 -->
           <a
             class="ai-gallery-item reveal"
+            data-gallery-type="video"
             href="https://www.facebook.com/reel/4676906962595794/"
             data-portfolio-video="true"
             data-video-title="Mini Electric Chopper"
@@ -1433,6 +1467,7 @@
           <!-- 03 -->
           <a
             class="ai-gallery-item reveal"
+            data-gallery-type="video"
             href="https://www.facebook.com/reel/1414885074164660/"
             data-portfolio-video="true"
             data-video-title="Mini Bag Sealer"
@@ -1458,49 +1493,54 @@
             </div>
           </a>
 
-          <!--
-          =============================================
-          P4 — AMP X CONTENT LATER
-          DO NOT UNCOMMENT UNTIL THE ACTUAL IMAGES EXIST
-          =============================================
-
-          <a class="ai-gallery-item reveal" href="#">
+          <!-- 04 — SPEC WORK: AmpX before/after (unsolicited sample) -->
+          <a
+            class="ai-gallery-item reveal"
+            data-gallery-type="ugc spec"
+            data-portfolio-image="true"
+            data-image-title="AmpX E-Bike Conversion Kit — spec creative"
+            data-image-brief="Brief: AmpX sells e-bike conversion kits. Their listing photo showed the box, not the product. Made: a UGC-style lifestyle frame that lays out every kit component on the bench so a buyer sees what arrives. Checked: component count and layout matched the kit contents list; framing keeps the rider, bike, and kit in one read."
+            data-image-src="assets/images/ai-gallery/ampx-before-after.jpg"
+            href="assets/images/ai-gallery/ampx-before-after.jpg"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             <img
-              src="assets/images/ai-gallery/ampx-ugc.jpg"
-              alt="AmpX UGC lifestyle creative"
+              alt="AmpX e-bike conversion kit — before and after spec creative"
               loading="lazy"
+              src="assets/images/ai-gallery/ampx-after.jpg"
             />
+            <span class="ai-gallery-badge">Spec work</span>
 
             <div class="ai-gallery-overlay">
               <div class="ai-gallery-item-copy">
-                <span>UGC / Lifestyle</span>
+                <span>UGC / Lifestyle · Spec creative</span>
                 <h3>AmpX E-Bike Conversion Kit</h3>
-                <p>Spec Creative · AI Lifestyle</p>
+                <p>Before → After · Product Layout · AI Lifestyle</p>
               </div>
 
-              <div class="ai-gallery-action">↗</div>
+              <div class="ai-gallery-action">↔</div>
             </div>
           </a>
 
-          <a class="ai-gallery-item reveal" href="#">
-            <img
-              src="assets/images/ai-gallery/ampx-static.jpg"
-              alt="AmpX static advertising concept"
-              loading="lazy"
-            />
-
-            <div class="ai-gallery-overlay">
-              <div class="ai-gallery-item-copy">
-                <span>Static Ad</span>
-                <h3>AmpX Product Creative</h3>
-                <p>E-commerce · Product Advertising</p>
-              </div>
-
-              <div class="ai-gallery-action">↗</div>
+          <!-- 05 — CTA: spec work for your brand -->
+          <a
+            class="ai-gallery-item ai-gallery-cta reveal"
+            data-gallery-type="all"
+            href="mailto:pauldedumo@gmail.com?subject=Spec%20sample%20request%20for%20%5Byour%20brand%5D&body=Hi%20Paul%2C%0A%0ABrand%3A%20%0AProduct%20or%20role%3A%20%0AWhat%20I%27d%20like%20to%20see%20(reel%20%2F%20ad%20%2F%20bug%20report%20%2F%20lead%20list)%3A%20%0A"
+          >
+            <div class="ai-gallery-cta-inner">
+              <span>Applying to your company?</span>
+              <h3>I'll make a sample first.</h3>
+              <p>
+                Send me your product or role. You get one finished piece — a
+                reel, an ad, a bug report, or a qualified lead list — in your
+                brand's voice, with a note on how I checked it. Before we ever
+                talk rates.
+              </p>
+              <strong>Request a spec sample →</strong>
             </div>
           </a>
-
-          -->
         </div>
 
         <div class="ai-gallery-footer reveal">
@@ -1775,6 +1815,24 @@
             <span>AI Video Creator</span>
             <span>Sales Research</span>
           </div>
+          <dl class="contact-facts">
+            <div>
+              <dt>Based</dt>
+              <dd>Calamba, Philippines · UTC+8</dd>
+            </div>
+            <div>
+              <dt>Availability</dt>
+              <dd>Immediate · full-time or contract</dd>
+            </div>
+            <div>
+              <dt>Hours</dt>
+              <dd>PH day shift · full overlap with APAC/AU, EU mornings</dd>
+            </div>
+            <div>
+              <dt>Response</dt>
+              <dd>Email answered within 24 hours</dd>
+            </div>
+          </dl>
         </div>
         <div class="contact-v34-panel reveal">
           <div class="contact-panel-head">
@@ -1918,6 +1976,16 @@
             <span class="fiverr-word">fiverr<span>.</span></span>
           </a>
         </div>
+        <div class="footer-qa-note">
+          <span class="footer-qa-dot"></span>
+          This site is linted, formatted, and link-checked in CI on every push.
+          <a
+            href="https://github.com/pradedumo/pradedumo.github.io"
+            rel="noopener noreferrer"
+            target="_blank"
+            >See the checks on GitHub ↗</a
+          >
+        </div>
         <div class="footer-bottom">
           <span>© 2026 Paul Ryan Dedumo</span
           ><span>QA Engineer · AI Video Creator · Sales Research</span
@@ -1925,6 +1993,36 @@
         </div>
       </div>
     </footer>
+    <div
+      aria-hidden="true"
+      aria-labelledby="portfolioImageTitle"
+      class="image-modal"
+      hidden
+      id="portfolioImageModal"
+      role="dialog"
+    >
+      <div class="image-modal-backdrop" data-close-image="true"></div>
+      <div class="image-modal-panel">
+        <button
+          aria-label="Close image"
+          class="image-modal-close"
+          id="portfolioImageClose"
+          type="button"
+        >
+          ✕
+        </button>
+        <div class="image-modal-head">
+          <small>Spec work · Before → After</small>
+          <h3 id="portfolioImageTitle">Spec creative</h3>
+        </div>
+        <img
+          alt=""
+          id="portfolioImageFrame"
+          src="assets/images/ai-gallery/ampx-before-after.jpg"
+        />
+        <p class="image-modal-brief" id="portfolioImageBrief"></p>
+      </div>
+    </div>
     <div
       aria-hidden="true"
       class="portfolio-video-modal"
@@ -2013,5 +2111,6 @@
     <script src="js/video-modal.js"></script>
     <script src="js/qa-case-modal.js"></script>
     <script src="js/qa-carousel.js"></script>
+    <script src="js/ai-gallery.js"></script>
   </body>
 </html>
