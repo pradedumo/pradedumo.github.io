@@ -65,7 +65,6 @@ nav.addEventListener("mouseleave", () => {
 });
 const workOptions = [...document.querySelectorAll(".work-option")];
 const workScenes = [...document.querySelectorAll(".work-scene")];
-const workCompanions = [...document.querySelectorAll("[data-work-companion]")];
 
 function activateWork(index) {
   workOptions.forEach((option, i) => {
@@ -75,10 +74,6 @@ function activateWork(index) {
   });
   workScenes.forEach((scene, i) => {
     scene.classList.toggle("active", i === index);
-  });
-  workCompanions.forEach((companion) => {
-    const match = Number(companion.dataset.workCompanion) === index;
-    companion.hidden = !match;
   });
 }
 workOptions.forEach((option, i) => {
