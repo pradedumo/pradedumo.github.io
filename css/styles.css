@@ -11030,3 +11030,173 @@ body.image-modal-open {
   height: 100%;
   padding: 24px;
 }
+
+/* 2026-09-29 — AI Video Creation: Batang 90s case card in the carousel
+   pane (same pattern as the Sales sample), flow + scene strip + prompt
+   expander inside the shared qa-case-modal */
+.ai-sample-case {
+  min-height: 0;
+  margin-top: 6px;
+  padding: 22px 24px 22px 56px;
+}
+.ai-sample-case .qa-case-index {
+  left: 24px;
+  top: 22px;
+  font-size: 0.62rem;
+}
+.ai-sample-case .qa-case-meta span {
+  font-size: 0.5rem;
+  padding: 6px 9px;
+}
+.ai-sample-case h5 {
+  font-size: 1.1rem;
+  margin-top: 10px;
+}
+.ai-sample-case > p {
+  margin: 8px 0 0;
+  color: #64758a;
+  font-size: 0.68rem;
+  line-height: 1.55;
+}
+.ai-sample-case .qa-case-result {
+  margin-top: 12px;
+}
+.ai-sample-case .qa-case-result small,
+.ai-sample-case .qa-case-role > small {
+  font-size: 0.5rem;
+}
+.ai-sample-case .qa-case-result strong {
+  font-size: 0.68rem;
+  line-height: 1.5;
+}
+.ai-sample-case .qa-case-role {
+  margin-top: 12px;
+}
+.ai-sample-case .qa-case-role span {
+  font-size: 0.56rem;
+}
+.ai-sample-case .qa-case-expand {
+  margin-top: 14px;
+  font-size: 0.66rem;
+}
+
+.ai-flow {
+  margin: 0;
+  padding-left: 20px;
+  color: #627186;
+  font-size: 0.7rem;
+  line-height: 1.55;
+}
+.ai-flow li {
+  margin-bottom: 7px;
+}
+.ai-flow b {
+  color: #0d2348;
+}
+
+.ai-scene-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+.ai-scene-strip figure {
+  margin: 0;
+}
+.ai-scene-strip img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  border-radius: 10px;
+  background: #e9e5de;
+}
+.ai-scene-strip figcaption {
+  margin-top: 6px;
+  color: #627186;
+  font-size: 0.62rem;
+  line-height: 1.45;
+}
+.ai-scene-strip figcaption b {
+  color: #9a7657;
+  margin-right: 4px;
+}
+
+.ai-prompt {
+  margin-top: 14px;
+  border: 1px solid #e6e9ed;
+  border-radius: 10px;
+  background: #f7f9fc;
+}
+.ai-prompt summary {
+  padding: 10px 12px;
+  cursor: pointer;
+  color: #0d2348;
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+.ai-prompt pre {
+  margin: 0;
+  padding: 0 12px 12px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: #43584f;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 0.6rem;
+  line-height: 1.55;
+}
+.ai-prompt-note {
+  margin: 0;
+  padding: 10px 12px 12px;
+  border-top: 1px solid #e6e9ed;
+  color: #627186;
+  font-size: 0.64rem;
+  line-height: 1.5;
+}
+
+.ai-case-watch {
+  position: relative;
+  display: block;
+  width: min(260px, 100%);
+  border-radius: 14px;
+  overflow: hidden;
+  text-decoration: none;
+  background: #e9e5de;
+}
+.ai-case-watch img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+}
+.ai-case-watch span {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  padding: 8px 10px;
+  border-radius: 999px;
+  background: rgba(7, 27, 65, 0.88);
+  color: #fff;
+  font-size: 0.62rem;
+  font-weight: 700;
+  text-align: center;
+}
+.ai-case-foot {
+  margin: 16px 0 0;
+  color: #627186;
+  font-size: 0.66rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 700px) {
+  .ai-sample-case {
+    padding: 18px 16px 18px 44px;
+  }
+  .ai-scene-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+.ai-gallery-badge-right {
+  left: auto;
+  right: 14px;
+}
