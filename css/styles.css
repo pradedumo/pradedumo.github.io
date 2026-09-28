@@ -10927,3 +10927,29 @@ body.image-modal-open {
     grid-template-columns: 1fr;
   }
 }
+
+/* 2026-09-29 — work-companion: full-width block below the Work carousel
+   (moved out of the fixed-height glass-pipeline illustration, which clips
+   overflow on desktop) */
+.work-companion {
+  margin-top: 28px;
+}
+.work-companion[hidden] {
+  display: none;
+}
+.work-companion .sample-work-card {
+  margin-top: 0;
+}
+.work-companion .sample-work-bmc {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (max-width: 900px) {
+  .work-companion {
+    margin-top: 20px;
+  }
+}
+
+.work-v25-stage .work-companion {
+  grid-column: 1 / -1;
+}
