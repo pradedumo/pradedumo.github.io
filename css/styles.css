@@ -10853,3 +10853,77 @@ body.image-modal-open {
   padding-left: 14px;
   border-left: 2px solid #e6e9ed;
 }
+
+/* 2026-09-29 — sales-research sample work card (Waypoint ICP + leads) */
+.sample-work-card {
+  margin-top: 16px;
+  padding: 16px 18px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 8px 22px rgba(51, 91, 77, 0.07);
+  backdrop-filter: blur(10px);
+}
+.sample-work-badge {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: rgba(32, 59, 50, 0.08);
+  color: #203b32;
+  font-size: 0.52rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+.sample-work-card h4 {
+  margin: 10px 0 12px;
+  color: #14213b;
+  font-size: 1rem;
+  letter-spacing: -0.02em;
+}
+.sample-work-bmc {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+.sample-work-bmc > div {
+  min-width: 0;
+}
+.sample-work-bmc small {
+  display: block;
+  margin-bottom: 4px;
+  color: #7f9a91;
+  font-size: 0.5rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+.sample-work-bmc p {
+  margin: 0;
+  color: #43584f;
+  font-size: 0.68rem;
+  line-height: 1.5;
+}
+.sample-work-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 14px;
+  padding: 9px 14px;
+  border-radius: 999px;
+  background: #14213b;
+  color: #fff;
+  font-size: 0.64rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+.sample-work-download:hover {
+  transform: translateX(3px);
+}
+
+@media (max-width: 640px) {
+  .sample-work-bmc {
+    grid-template-columns: 1fr;
+  }
+}
