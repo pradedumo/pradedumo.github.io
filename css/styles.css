@@ -10837,3 +10837,19 @@ body.image-modal-open {
     padding: 22px 20px;
   }
 }
+
+/* 2026-09-29 — testimonial takeaway note styling */
+.testimonial-note-label {
+  display: block;
+  margin-bottom: 4px;
+  color: #9aa7b8;
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+.testimonial-continuation {
+  font-style: italic;
+  padding-left: 14px;
+  border-left: 2px solid #e6e9ed;
+}
