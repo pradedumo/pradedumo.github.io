@@ -11298,3 +11298,18 @@ body.image-modal-open {
     display: none;
   }
 }
+
+/* Footer GitHub link, styled to sit with the other platform marks
+   (light text on the dark footer, dark on the white hover state). */
+.github {
+  min-width: 82px;
+}
+.github-word {
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: -0.02em;
+}
+.github:hover .github-word {
+  color: #0d1b2a;
+}
