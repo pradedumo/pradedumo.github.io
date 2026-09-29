@@ -11313,3 +11313,39 @@ body.image-modal-open {
 .github:hover .github-word {
   color: #0d1b2a;
 }
+
+/* 2026-09-29 — Résumé dropdown painted UNDER the identity block.
+   .hero-in animations leave a transform on .hero-v12-actions,
+   .hero-v12-identity and .hero-v12-stats, so each is its own stacking
+   context painted in DOM order; the identity block (later sibling) drew
+   over the dropdown panel that lives inside the actions block, and the
+   panel's z-index:20 was trapped inside that lower context. Lifting the
+   actions row above its later siblings lets the panel sit on top. */
+.hero-v12-actions {
+  position: relative;
+  z-index: 30;
+}
+/* On mobile the actions row lives inside .hero-v12-mobile-intro (z 5),
+   which the KPI cards (z 6) painted over — the panel showed ghosted
+   behind them. Put both intro containers above the KPI stack. */
+.hero-v12-copy,
+.hero-v12-mobile-intro {
+  z-index: 7 !important;
+}
+/* Mobile: the dropdown panel is meant to span the whole button row
+   (left/right:0 against .hero-v12-actions). A later rule made the
+   <details> itself the positioned ancestor, squeezing the panel into
+   that one button's third of the row (text wrapping word by word).
+   Un-position the <details> so the row is the containing block. */
+@media (max-width: 700px) {
+  .hero-v12-mobile-actions .resume-download-hero {
+    position: static !important;
+  }
+}
+/* Fully opaque dropdown: at 98% white the cards behind it still ghosted
+   through as faint text. */
+.resume-menu-panel {
+  background: #fff;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
