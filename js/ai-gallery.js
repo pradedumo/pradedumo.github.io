@@ -45,6 +45,22 @@
     modal.setAttribute("aria-hidden", "true");
     document.body.classList.remove("image-modal-open");
     frame.removeAttribute("src");
+    // Clear a deep-link hash (e.g. #lean) so closing doesn't leave it stuck.
+    const linked = document.getElementById(location.hash.slice(1));
+    if (linked && linked.dataset.portfolioImage === "true") {
+      history.replaceState(null, "", location.pathname + location.search);
+    }
+  }
+
+  // Deep links: https://pradedumo.github.io/#lean opens that spec tile's
+  // lightbox directly. Any [data-portfolio-image] tile with an id works.
+  function openFromHash() {
+    const id = decodeURIComponent(location.hash.slice(1));
+    if (!id) return;
+    const el = document.getElementById(id);
+    if (!el || el.dataset.portfolioImage !== "true") return;
+    el.scrollIntoView({ block: "center" });
+    openImage(el);
   }
 
   document.querySelectorAll('[data-portfolio-image="true"]').forEach((el) => {
@@ -61,4 +77,7 @@
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && !modal.hidden) closeImage();
   });
+
+  addEventListener("hashchange", openFromHash);
+  openFromHash();
 })();
