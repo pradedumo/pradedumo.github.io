@@ -49,7 +49,7 @@ button {
   letter-spacing: 0.16em;
   font-size: 0.72rem;
   font-weight: 800;
-  color: #718096;
+  color: #626f82;
 }
 .section {
   padding: 110px 0;
@@ -72,14 +72,40 @@ button {
   color: var(--muted);
   margin: 0;
 }
-.reveal {
+/* Scroll-reveal only hides content once JS has confirmed it will reveal it
+   (html.js is set by an inline script in <head>), so no-JS visitors and slow
+   script loads never see a blank page. */
+.js .reveal {
   opacity: 0;
   transform: translateY(26px);
   transition: 0.7s var(--ease);
 }
-.reveal.show {
+.js .reveal.show {
   opacity: 1;
   transform: none;
+}
+/* Above-the-fold hero entrance: pure CSS, so it never waits for main.js. */
+.hero-in {
+  animation: hero-in 0.7s var(--ease) both;
+}
+.hero-v12-title {
+  animation-delay: 0.05s;
+}
+.hero-v12-intro {
+  animation-delay: 0.1s;
+}
+.hero-v12-actions {
+  animation-delay: 0.15s;
+}
+@keyframes hero-in {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 /* NAV */
@@ -1082,7 +1108,8 @@ button {
     transition: none !important;
     scroll-behavior: auto !important;
   }
-  .reveal {
+  .reveal,
+  .js .reveal {
     opacity: 1;
     transform: none;
   }
@@ -1217,8 +1244,7 @@ button {
 }
 .hero-v12-signature em {
   color: #8d684e;
-  font-family: "Brush Script MT", "Segoe Script", "Snell Roundhand",
-    "Lucida Handwriting", cursive;
+  font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 2rem;
   letter-spacing: 0;
   font-weight: 500;
@@ -1683,8 +1709,7 @@ button {
 .hero-v12-corner-note em {
   display: block;
   color: #8d684e;
-  font-family: "Brush Script MT", "Segoe Script", "Snell Roundhand",
-    "Lucida Handwriting", cursive;
+  font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 1.42rem;
   line-height: 0.88;
   font-style: normal;
@@ -2366,7 +2391,20 @@ button {
 }
 
 /* ===== hero-v21-viewport-script-fix ===== */
-@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&display=swap");
+/* Cormorant Garamond Italic (SIL OFL), self-hosted. Used for the script-style
+   accents. The earlier mid-file Google Fonts @import was ignored by browsers, so
+   visitors got the generic "cursive" fallback (Comic Sans on Windows). */
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("../assets/fonts/cormorant-garamond-italic-latin.woff2")
+    format("woff2");
+  font-style: italic;
+  font-weight: 400 700;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
 
 /* 1) HERO = ONE CLEAN VIEWPORT */
 html,
@@ -2467,7 +2505,7 @@ body {
 /* 3) AUTHENTIC SCRIPT ACCENTS */
 .hero-v12-signature em,
 .hero-v12-corner-note em {
-  font-family: "Caveat", cursive !important;
+  font-family: "Cormorant Garamond", Georgia, serif !important;
   font-style: normal !important;
   font-weight: 600 !important;
   letter-spacing: 0 !important;
@@ -2591,15 +2629,7 @@ body {
 }
 
 /* ===== hero-v22-reference-spacing-scale-font ===== */
-/* Exact Aesthetica when installed/licensed on the viewer's system.
-   Caveat remains as a safe fallback. */
-@font-face {
-  font-family: "Aesthetica";
-  src: local("aesthetica"), local("Aesthetica");
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-}
+/* Script accents use Cormorant Garamond Italic (see @font-face above). */
 
 /* 1. Reduce excessive LEFT / RIGHT whitespace.
    Keep the same centered 3-column composition, just use more viewport width. */
@@ -2650,7 +2680,7 @@ body {
 /* 3. Aesthetica script accents */
 .hero-v12-signature em,
 .hero-v12-corner-note em {
-  font-family: "Aesthetica", "Caveat", cursive !important;
+  font-family: "Cormorant Garamond", Georgia, serif !important;
   font-style: normal !important;
   font-weight: 400 !important;
   letter-spacing: 0 !important;
@@ -3734,10 +3764,10 @@ body {
   color: #0a1018;
 }
 .work-v25 .work-option:not(.active) .label {
-  color: #c4c8cf;
+  color: #8d9095;
 }
 .work-v25 .work-option:not(.active) .num {
-  color: #b2b8c1;
+  color: #71757a;
 }
 
 /* responsive */
@@ -4183,7 +4213,7 @@ body {
 }
 .about-heading h2 span {
   color: #9b755b;
-  font-family: "Aesthetica", "Caveat", cursive;
+  font-family: "Cormorant Garamond", Georgia, serif;
   font-weight: 400;
   letter-spacing: -0.02em;
 }
@@ -4296,7 +4326,7 @@ body {
 }
 .about-principle p {
   margin: 0;
-  font-family: "Aesthetica", "Caveat", cursive;
+  font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 1.55rem;
   line-height: 1;
 }
@@ -4486,7 +4516,7 @@ body {
 }
 .experience-resume-links > span {
   margin-right: 2px;
-  color: #8491a0;
+  color: #67717d;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-size: 0.58rem;
@@ -4726,7 +4756,7 @@ body {
 }
 .testimonial-note p {
   margin: 0;
-  font-family: "Aesthetica", "Caveat", cursive;
+  font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 1.45rem;
   line-height: 1;
 }
@@ -5561,7 +5591,7 @@ body {
 }
 .stack-head h2 span {
   color: #8f735f;
-  font-family: "Aesthetica", "Caveat", cursive;
+  font-family: "Cormorant Garamond", Georgia, serif;
   font-weight: 400;
   letter-spacing: -0.015em;
 }
@@ -5673,7 +5703,7 @@ body {
 }
 .stack-bottom p {
   margin: 0;
-  font-family: "Aesthetica", "Caveat", cursive;
+  font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 1.42rem;
   line-height: 1;
 }
@@ -6266,7 +6296,7 @@ body {
 }
 .featured-insight-note {
   margin-top: 10px;
-  color: #62778e;
+  color: #7f93a9;
   font-size: 0.42rem;
 }
 .ai-real-process span b {
@@ -6458,7 +6488,7 @@ body {
   padding: 4px 6px;
   border-radius: 999px;
   background: #edf3fb;
-  color: #55739b;
+  color: #526e95;
   font-size: 0.41rem;
   font-weight: 800;
 }
@@ -6490,7 +6520,7 @@ body {
 .qa-case-columns small,
 .qa-case-result small {
   display: block;
-  color: #7d91ad;
+  color: #637389;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-size: 0.38rem;
@@ -8954,7 +8984,7 @@ video {
   }
 
   .hero-v12-mobile-signature em {
-    font-family: "Aesthetica", "Caveat", cursive !important;
+    font-family: "Cormorant Garamond", Georgia, serif !important;
     font-size: 1.32rem !important;
     font-style: normal !important;
     color: #9f734d !important;
@@ -9404,7 +9434,7 @@ body.video-modal-open {
 
 .ai-gallery-intro p {
   margin: 0;
-  color: #697487;
+  color: #646e80;
   font-size: 0.96rem;
   line-height: 1.75;
 }
@@ -9563,7 +9593,7 @@ body.video-modal-open {
 
 .ai-gallery-footer p {
   margin: 0;
-  color: #707b8c;
+  color: #656f7e;
   font-size: 0.76rem;
 }
 
@@ -9666,7 +9696,7 @@ body.video-modal-open {
 .qa-recording-dimension > small {
   display: block;
   margin-bottom: 9px;
-  color: #7d899b;
+  color: #67707f;
   font-size: 0.54rem;
   font-weight: 800;
   letter-spacing: 0.1em;
@@ -9812,7 +9842,7 @@ body.video-modal-open {
 
 .qa-hold-card > span {
   margin-bottom: 10px;
-  color: #6d7b8f;
+  color: #637082;
   font-size: 0.52rem;
   font-weight: 800;
   letter-spacing: 0.12em;
@@ -9839,7 +9869,7 @@ body.video-modal-open {
 
 .qa-hold-card small {
   margin-top: 4px;
-  color: #698476;
+  color: #5c7468;
   font-size: 0.53rem;
 }
 
@@ -9891,7 +9921,7 @@ body.video-modal-open {
 }
 
 .qa-investigation-flow > div small {
-  color: #9aa4b0;
+  color: #697078;
   font-size: 0.48rem;
 }
 
@@ -9905,7 +9935,7 @@ body.video-modal-open {
 .qa-investigation-flow > div span {
   display: block;
   margin-top: 2px;
-  color: #738095;
+  color: #646f82;
   font-size: 0.55rem;
 }
 
@@ -9961,7 +9991,7 @@ body.video-modal-open {
 
 .qa-automation-flow > div > span {
   display: block;
-  color: #9ba6b4;
+  color: #686f79;
   font-size: 0.45rem;
 }
 
@@ -9975,7 +10005,7 @@ body.video-modal-open {
 .qa-automation-flow small {
   display: block;
   margin-top: 3px;
-  color: #7d8998;
+  color: #67707d;
   font-size: 0.48rem;
   line-height: 1.3;
 }
@@ -10181,7 +10211,7 @@ body.video-modal-open {
 .qa-case-modal-head small {
   display: block;
   margin-bottom: 6px;
-  color: #9a7657;
+  color: #8f6e51;
   font-size: 0.56rem;
   font-weight: 800;
   letter-spacing: 0.14em;
@@ -10448,7 +10478,7 @@ body.qa-case-modal-open {
 }
 
 .how-step-number {
-  color: #70849e;
+  color: #7e90a8;
   font-size: 0.55rem;
   font-weight: 800;
   letter-spacing: 0.1em;
@@ -10949,7 +10979,7 @@ body.image-modal-open {
 .sales-case-table:not(.sales-case-leads) th {
   width: 100px;
   background: #f7f9fc;
-  color: #55739b;
+  color: #526e95;
 }
 .sales-case-leads tr:nth-child(even) td {
   background: #f7f8fb;
@@ -11199,4 +11229,72 @@ body.image-modal-open {
 .ai-gallery-badge-right {
   left: auto;
   right: 14px;
+}
+
+/* ===== a11y: legible sizes in the featured reel card =====
+   The metric labels, source note, kicker and watch label were 6.7-8.3px, which
+   made the page's only hard numbers (and where they come from) unreadable. */
+.video-real-project .featured-metrics span {
+  font-size: 0.62rem !important;
+}
+.video-real-project .featured-insight-note {
+  font-size: 0.7rem !important;
+  line-height: 1.5;
+}
+.video-real-project .featured-kicker {
+  font-size: 0.7rem !important;
+}
+.video-real-project .featured-watch {
+  font-size: 0.72rem !important;
+}
+
+/* ===== script accents: one italic serif everywhere ===== */
+.hero-v12-signature em,
+.hero-v12-corner-note em,
+.hero-v12-mobile-signature em,
+.about-heading h2 span,
+.about-principle p,
+.testimonial-note p,
+.stack-head h2 span,
+.stack-bottom p {
+  font-family: "Cormorant Garamond", Georgia, serif !important;
+  font-style: italic !important;
+}
+
+/* Name alias: LinkedIn, GitHub and colleagues know him as Ryan. */
+.goes-by {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: #626f82;
+}
+
+/* ===== hero headline: one concrete sentence (replaces the rotating word) ===== */
+.hero.hero-v12 h1.hero-v12-title {
+  font-size: clamp(1.9rem, 3.1vw, 2.9rem) !important;
+  line-height: 1.08 !important;
+  letter-spacing: -0.03em !important;
+  max-width: 15em;
+}
+.hero-accent {
+  color: var(--blue);
+}
+.hero-v12-mobile-headline {
+  margin: 12px auto 0;
+  max-width: 24em;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.32;
+  letter-spacing: -0.01em;
+  text-align: center;
+  color: var(--v12-ink, #071b41);
+}
+@media (min-width: 901px) {
+  .hero-v12-mobile-headline {
+    display: none;
+  }
 }

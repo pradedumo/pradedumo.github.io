@@ -17,6 +17,7 @@
     modal.hidden = false;
     modal.setAttribute("aria-hidden", "false");
     document.body.classList.add("qa-case-modal-open");
+    if (window.dialogFocus) window.dialogFocus.open(modal, closeBtn);
   }
 
   function closeCase() {
@@ -24,6 +25,7 @@
     modal.setAttribute("aria-hidden", "true");
     document.body.classList.remove("qa-case-modal-open");
     body.replaceChildren();
+    if (window.dialogFocus) window.dialogFocus.close(modal);
   }
 
   document.querySelectorAll("[data-qa-case-detail]").forEach((el) => {
