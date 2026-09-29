@@ -15,6 +15,7 @@
     modal.hidden = false;
     modal.setAttribute("aria-hidden", "false");
     document.body.classList.add("video-modal-open");
+    if (window.dialogFocus) window.dialogFocus.open(modal, closeBtn);
   }
 
   function closeVideo() {
@@ -22,6 +23,7 @@
     modal.hidden = true;
     modal.setAttribute("aria-hidden", "true");
     document.body.classList.remove("video-modal-open");
+    if (window.dialogFocus) window.dialogFocus.close(modal);
   }
 
   document.querySelectorAll('[data-portfolio-video="true"]').forEach((el) => {

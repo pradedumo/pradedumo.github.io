@@ -38,12 +38,14 @@
     modal.hidden = false;
     modal.setAttribute("aria-hidden", "false");
     document.body.classList.add("image-modal-open");
+    if (window.dialogFocus) window.dialogFocus.open(modal, closeBtn);
   }
 
   function closeImage() {
     modal.hidden = true;
     modal.setAttribute("aria-hidden", "true");
     document.body.classList.remove("image-modal-open");
+    if (window.dialogFocus) window.dialogFocus.close(modal);
     frame.removeAttribute("src");
     // Clear a deep-link hash (e.g. #lean) so closing doesn't leave it stuck.
     const linked = document.getElementById(location.hash.slice(1));

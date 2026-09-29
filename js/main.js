@@ -10,12 +10,6 @@ const ro = new IntersectionObserver(
   { threshold: 0.12 },
 );
 reveals.forEach((e) => ro.observe(e));
-const track = document.getElementById("wordTrack");
-let wi = 0;
-setInterval(() => {
-  wi = (wi + 1) % 3;
-  track.style.transform = `translateY(-${wi * 1.02}em)`;
-}, 2400);
 const nav = document.getElementById("navPill"),
   toggle = document.getElementById("navToggle");
 function setMobileNav(open) {

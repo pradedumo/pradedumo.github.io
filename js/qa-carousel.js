@@ -23,9 +23,22 @@
     return "hidden";
   }
 
+  // Off-screen and "peek" slides stay clickable for mouse users, but must not be
+  // reachable by keyboard or announced by screen readers.
+  function setSlideAccessibility(slide, isActive) {
+    if (isActive) slide.removeAttribute("aria-hidden");
+    else slide.setAttribute("aria-hidden", "true");
+    slide.querySelectorAll("a, button").forEach((el) => {
+      if (isActive) el.removeAttribute("tabindex");
+      else el.setAttribute("tabindex", "-1");
+    });
+  }
+
   function render() {
     slides.forEach((slide, index) => {
-      slide.setAttribute("data-position", positionFor(index));
+      const position = positionFor(index);
+      slide.setAttribute("data-position", position);
+      setSlideAccessibility(slide, position === "active");
     });
 
     dots.forEach((dot, index) => {
@@ -51,8 +64,11 @@
     goTo(current - 1);
   }
 
+  const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
+
   function startAuto() {
     stopAuto();
+    if (reducedMotion.matches) return;
     timer = setInterval(next, 6000);
   }
 
@@ -99,6 +115,13 @@
 
   carousel.addEventListener("mouseenter", stopAuto);
   carousel.addEventListener("mouseleave", startAuto);
+  // Keyboard and touch users get the same pause-while-interacting behaviour.
+  carousel.addEventListener("focusin", stopAuto);
+  carousel.addEventListener("focusout", startAuto);
+  reducedMotion.addEventListener("change", () => {
+    if (reducedMotion.matches) stopAuto();
+    else startAuto();
+  });
 
   let resizeTimer = null;
   addEventListener("resize", () => {
