@@ -22,6 +22,7 @@
   // --- Image lightbox (spec work before/after) ----------------------------
   const modal = document.getElementById("portfolioImageModal");
   const frame = document.getElementById("portfolioImageFrame");
+  const kicker = document.getElementById("portfolioImageKicker");
   const title = document.getElementById("portfolioImageTitle");
   const brief = document.getElementById("portfolioImageBrief");
   const closeBtn = document.getElementById("portfolioImageClose");
@@ -33,6 +34,7 @@
     frame.alt = el.dataset.imageTitle || "";
     title.textContent = el.dataset.imageTitle || "Spec creative";
     brief.textContent = el.dataset.imageBrief || "";
+    if (kicker) kicker.textContent = el.dataset.imageKicker || "Spec work";
     modal.hidden = false;
     modal.setAttribute("aria-hidden", "false");
     document.body.classList.add("image-modal-open");
